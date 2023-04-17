@@ -3,6 +3,7 @@ const http2 = require('node:http2');
 const bcrypt = require('bcrypt');
 const UserModel = require('../models/user');
 const { NotFoundError, ConflictError, BadRequestError } = require('../utils/errors');
+const config = require('../utils/config');
 
 module.exports.getUsers = (req, res, next) => {
   UserModel.find({})
@@ -126,7 +127,7 @@ module.exports.login = (req, res, next) => {
 
   return UserModel.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, config.jwtToken, { expiresIn: '7d' });
       res.send({
         token,
       });
