@@ -48,10 +48,7 @@ module.exports.createUser = (req, res, next) => {
       const userObject = user.toObject();
       delete userObject.password;
       res.status(http2.constants.HTTP_STATUS_CREATED).send({
-        data: {
-          email: user.email,
-          _id: user.id,
-        },
+        userObject,
       });
     })
     .catch((err) => {
