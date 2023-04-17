@@ -1,0 +1,9 @@
+.register-info__link {
+    text-decoration-line: none;
+    color: #fff;
+    transition: color .2s linear;
+}
+
+.register-info__link:hover {
+    opacity: 0.6;
+}
