@@ -4,7 +4,6 @@ class Api {
 
   constructor({url}) {
     this._url = url;
-    this._token = '';
   }
 
   _handleResponse(res) {
