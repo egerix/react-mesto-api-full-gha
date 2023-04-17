@@ -129,7 +129,6 @@ function App() {
   }
 
   function handleLogin(email, password) {
-    console.log('handleLogin')
     auth
       .authorize(email, password)
       .then((data) => {
@@ -160,7 +159,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log('useEffect ' + isLoggedIn)
     const token = localStorage.getItem(authConfig.tokenStorageName);
     if (!isLoggedIn && token) {
       auth
