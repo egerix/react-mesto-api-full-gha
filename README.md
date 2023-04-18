@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 62.84.122.123
+IP 62.84.122.123
 
 Frontend https://egerix.nomoredomains.monster
 
